@@ -38,6 +38,6 @@ sudo yum install azure-cli -y
 az upgrade
 
 az login -u ba088@btc3.onmicrosoft.com -p Bespin088!
-az vm deallocate --resource-group azuregod --name azuregod_was 
-az vm generalize --resource-group azuregod --name azuregod_was
+az vm deallocate --resource-group ${rgname} --name ${vmname} 
+az vm generalize --resource-group ${rgname} --name ${vmname}
 

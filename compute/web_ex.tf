@@ -61,7 +61,7 @@ resource "azurerm_virtual_machine_extension" "vmex_web_z2_2" {
   
   settings = <<SETTINGS
     {
-        "script": "${base64encode(templatefile("proxyimg.sh", {pub_ip="${var.pub_ip}"}))}"
+        "script": "${base64encode(templatefile("proxyimg.sh", {pub_ip="${var.pub_ip}", rgname="${var.resource_group}", vmname="${var.name}_was" }))}"
     }
     SETTINGS
     
@@ -69,3 +69,4 @@ resource "azurerm_virtual_machine_extension" "vmex_web_z2_2" {
       azurerm_virtual_machine_extension.vmex_was
     ]
 }
+
