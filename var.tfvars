@@ -1,5 +1,5 @@
 
-name = "azuregod"
+name = "timeout"
 
 location = "koreacentral"
 

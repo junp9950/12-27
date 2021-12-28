@@ -62,3 +62,19 @@ resource "azurerm_mysql_configuration" "db_conf" {
   ]
 }
 
+#####Wait time out######
+resource "azurerm_mysql_configuration" "wait_timeout" {
+  resource_group_name = var.resource_group
+  server_name         = var.db_server_name
+  
+
+  # mysql 서버 시간 맞추기
+  name  = "wait_timeout"
+  value = "27999"
+
+  depends_on = [
+    azurerm_mysql_database.db
+  ]
+}
+
+
